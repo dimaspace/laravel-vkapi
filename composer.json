@@ -1,5 +1,5 @@
 {
-    "name": "bafoed/vkapi",
+    "name": "dimaspace/vkapi",
     "type": "library",
     "description": "Laravel helper for performing requests to VK API",
     "keywords": [
