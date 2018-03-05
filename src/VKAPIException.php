@@ -22,8 +22,9 @@ class VKAPIException extends \Exception {
      */
     public $message;
 
-    public function __construct($code, $message) {
+    public function __construct($code, $message, $error) {
         $this->code = $code;
         $this->message = $message;
+        $this->error = $error;
     }
 }

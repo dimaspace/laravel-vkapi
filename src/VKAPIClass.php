@@ -9,6 +9,7 @@
 
 namespace bafoed\VKAPI;
 
+use Decaptcha;
 
 class VKAPIClass
 {
@@ -108,8 +109,25 @@ class VKAPIClass
         }
 
         if(isset($json['error'])) {
-            $exception = new VKAPIException($json['error']['error_code'], $json['error']['error_msg']);
-            throw $exception;
+            if($json['error']['error_code'] == 14){
+                $error = $json['error'];
+                if (Decaptcha::run($error['captcha_img'])) {
+                    $solved = Decaptcha::result();
+
+                    $params['captcha_sid'] = $error['captcha_sid'];
+                    $params['captcha_key'] = $solved;
+
+                    $result = $this->call($method, $params);
+
+                    return $result;
+
+                } else {
+                    throw new \Exception(Decaptcha::error());
+                }
+            }else{
+                $exception = new VKAPIException($json['error']['error_code'], $json['error']['error_msg'], $json['error']);
+                throw $exception;
+            };
         }
 
         return $json['response'];
