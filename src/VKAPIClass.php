@@ -10,6 +10,9 @@
 namespace bafoed\VKAPI;
 
 use Decaptcha;
+use Notification;
+use \App\Notifications\ExceptionAlert;
+use App\User;
 
 class VKAPIClass
 {
@@ -126,6 +129,7 @@ class VKAPIClass
                 }
             }else{
                 $exception = new VKAPIException($json['error']['error_code'], $json['error']['error_msg'], $json['error']);
+                Notification::send(User::find(1), new ExceptionAlert('VKAPI', $method, $exception));
                 throw $exception;
             };
         }
