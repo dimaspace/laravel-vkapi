@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "bafoed\\VKAPI\\": "src"
+            "dimaspace\\VKAPI\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "bafoed\\VKAPI\\Test\\": "tests"
+            "dimaspace\\VKAPI\\Test\\": "tests"
         }
     },
     "scripts": {
