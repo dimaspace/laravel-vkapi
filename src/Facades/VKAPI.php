@@ -7,7 +7,7 @@
  * 2016.
  */
 
-namespace bafoed\VKAPI\Facades;
+namespace dimaspace\VKAPI\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

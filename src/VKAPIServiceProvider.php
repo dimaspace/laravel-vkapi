@@ -1,6 +1,6 @@
 <?php
 
-namespace bafoed\VKAPI;
+namespace dimaspace\VKAPI;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;

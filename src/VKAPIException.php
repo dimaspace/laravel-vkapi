@@ -7,7 +7,7 @@
  * 2016.
  */
 
-namespace bafoed\VKAPI;
+namespace dimaspace\VKAPI;
 
 
 class VKAPIException extends \Exception {
