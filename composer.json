@@ -21,7 +21,8 @@
     "require": {
         "illuminate/support": "~5.1",
         "php" : "~5.5|~7.0",
-        "insign/laravel-decaptcha": "~1"
+        "insign/laravel-decaptcha": "~1",
+        "bafoed/vkapi": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit" : "4.*",
