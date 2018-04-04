@@ -131,7 +131,7 @@ class VKAPIClass
                 $exception = new VKAPIException($json['error']['error_code'], $json['error']['error_msg'], $json['error']);
                 $exception_msg = $method . "\n";
                 $exception_msg .= json_encode($params) . "\n";
-                Notification::send(User::find(1), new ExceptionAlert('VKAPI', $exception_msg, $exception));
+                //Notification::send(User::find(1), new ExceptionAlert('VKAPI', $exception_msg, $exception));
                 throw $exception;
             };
         }
