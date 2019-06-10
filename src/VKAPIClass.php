@@ -79,7 +79,7 @@ class VKAPIClass
      */
     public function call($method, $params = NULL) {
         $queryString = array(
-            'version' => $this->version
+            'v' => $this->version
         );
 
         if(!is_null($this->accessToken) && !empty($this->accessToken)) {
